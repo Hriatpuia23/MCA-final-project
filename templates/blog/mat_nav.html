@@ -1,0 +1,66 @@
+<div class="navbar navbar-expand-md navbar-dark bg-info">
+    <a class="navbar-brand" href="{% url 'blog-home' %}">Farmer Helpline</a>
+
+    <li class="nav-item img-side">
+        <a class="nav-link text-light">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </a>
+    </li>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+         <ul class="navbar-nav mr-auto">
+                <a class="nav-link text-light">
+                    <form class="navbar-brand search-bar " action="{% url 'blog-home' %}">
+                        <input type="text" placeholder="Search.." name="q">
+                        <button class="btn btn-outline-info" type="submit"><i class="fa fa-search"></i></button>
+                    </form>
+                </a>
+         </ul>
+
+
+        <div class="navbar-nav dropdownnav">
+
+            {% if request.user.is_authenticated %}
+            <li class="nav-item img-side">
+                <a class="nav-link text-light">Hi {{ request.user|capfirst }}</a>
+            </li>
+            {% if request.user.profile.image %}
+            <li class="nav-item img-side">
+                <a href="{% url 'profile' %}"><img src="{{ request.user.profile.image.url }}" class="pro-img"></a>
+            </li>
+            {% else %}
+            <li class="nav-item img-side">
+                <a href="{% url 'profile' %}"><img src="/media/default.jpg" class="pro-img"></a>
+            </li>
+            {% endif %}
+
+            <li class="nav-item img-side">
+                <a href="{% url 'profile' %}" class="nav-link text-light">Profile</a>
+
+            </li>
+            <li class="nav-item img-side">
+                <a href="{% url 'logout' %}" class="nav-link text-light">Logout</a>
+            </li>
+
+
+            {% else %}
+
+
+            <li class="nav-item img-side">
+                <a href="{% url 'login' %}" class="nav-link text-light">Login |</a>
+            </li>
+            <li class="nav-item img-side">
+                <a href="{% url 'register' %}" class="nav-link text-light">Register </a>
+            </li>
+
+
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+
+

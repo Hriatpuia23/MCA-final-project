@@ -1,0 +1,60 @@
+<!--chatbot widget -->
+{% load static %}
+<div class="container">
+    <div class="widget">
+        <div class="chat_header">
+
+            <!--Add the name of the bot here -->
+            <span class="close-cus" id="close1">
+                  <i class="material-icons">
+                  close
+                  </i>
+               </span>
+
+            <span class="chat_header_title">Farmer Helpline</span>
+            <span class="dropdown-trigger" href='#' data-target='dropdown1'>
+                  <i class="material-icons">
+                  more_vert
+                  </i>
+               </span>
+
+
+            <!-- Dropdown menu-->
+            <ul id='dropdown1' class='dropdown-content'>
+                <li><a href="#" id="clear">Clear</a></li>
+                <li><a href="#" id="restart">Restart</a></li>
+                <li><a href="#" id="close">Close</a></li>
+            </ul>
+        </div>
+
+        <!--Chatbot contents goes here -->
+        <div class="chats" id="chats">
+            <div class="clearfix"></div>
+
+        </div>
+
+        <!--keypad for user to type the message -->
+        <div class="keypad">
+            <textarea id="userInput" placeholder="Type a message..." class="usrInput"></textarea>
+            <div id="sendButton"><i class="fa fa-paper-plane" aria-hidden="true"></i></div>
+        </div>
+    </div>
+
+    <!--bot profile-->
+    <div class="profile_div" id="profile_div">
+        <img class="imgProfile" src="{% static 'chatbot/img/intro3.png' %}"/>
+    </div>
+
+    <!-- Bot pop-up intro -->
+    <div class="tap-target" data-target="profile_div">
+        <div class="tap-target-content">
+            {% if request.user.is_authenticated %}
+            <h5 class="white-text">Hi {{ request.user|capfirst }}.. </h5>
+            <p class="white-text">I duh chuan zawhna min zawt thei a nia.</p>
+            {% else %}
+            <h5 class="white-text">Hey👋.. </h5>
+            <p class="white-text">I duh chuan zawhna min zawt thei a nia.</p>
+            {% endif %}
+        </div>
+    </div>
+</div>
