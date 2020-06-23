@@ -1,10 +1,11 @@
 from django.urls import path
-from .views import PostListView
+from .views import Home,Guest
 from django.contrib.auth import views as auth_views
 from . import views
 
 urlpatterns = [
-    path('home/', PostListView.as_view(), name='blog-home'),
+    path('home/', Home.as_view(), name='blog-home'),
+    path('guest-home/', Guest.as_view(), name='guest-home'),
     path('register/', views.register, name='register'),
     path('profile/', views.profile, name='profile'),
     path('', auth_views.LoginView.as_view(redirect_authenticated_user=True), name='login'),

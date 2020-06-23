@@ -57,14 +57,7 @@ div.chats::-webkit-scrollbar {
     margin-bottom: 2px;
 }
 
-.botAvatar {
-    border-radius: 50%;
-    width: 1.5em;
-    height: 1.5em;
-    float: left;
-    margin-left: 5px;
-    /* border: 2px solid  #2c53af ; */
-}
+
 
 .botMsg {
     float: left;
@@ -161,6 +154,15 @@ textarea-webkit-scrollbar {
     color: #2b2bab;
 }
 
+.botAvatar {
+    border-radius: 50%;
+    width: 1.5em;
+    height: 1.5em;
+    float: left;
+    margin-left: 5px;
+    /* border: 2px solid  #2c53af ; */
+}
+
 .imgProfile {
     box-shadow: 0 0px 1px 0 rgba(0, 0, 0, 0.16), 0 0px 10px 0 #00000096;
     border-radius: 50%;
@@ -171,7 +173,7 @@ textarea-webkit-scrollbar {
     /* display: none; */
     position: fixed;
     padding: 5px;
-    width: 10%;
+    width: 150px;
     bottom: 0;
     right: 0;
     cursor: pointer;

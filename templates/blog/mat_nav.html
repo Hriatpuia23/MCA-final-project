@@ -1,6 +1,9 @@
 <div class="navbar navbar-expand-md navbar-dark bg-info">
+    {% if request.user.is_authenticated %}
     <a class="navbar-brand" href="{% url 'blog-home' %}">Farmer Helpline</a>
-
+    {% else %}
+    <a class="navbar-brand" href="{% url 'guest-home' %}">Farmer Helpline</a>
+    {% endif %}
     <li class="nav-item img-side">
         <a class="nav-link text-light">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -22,7 +25,6 @@
 
 
         <div class="navbar-nav dropdownnav">
-
             {% if request.user.is_authenticated %}
             <li class="nav-item img-side">
                 <a class="nav-link text-light">Chibai {{ request.user|capfirst }}</a>
