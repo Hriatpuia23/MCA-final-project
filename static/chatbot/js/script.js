@@ -128,7 +128,7 @@ $("#sendButton").on("click", function(e) {
     } else {
         //destroy the existing chart
 
-        chatChart.destroy();
+        //chatChart.destroy();
         $(".chart-container").remove();
         if (typeof modalChart !== 'undefined') { modalChart.destroy(); }
 
